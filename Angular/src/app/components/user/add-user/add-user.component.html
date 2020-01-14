@@ -1,0 +1,64 @@
+<button mat-dialog-close mat-icon-button class="float-right">
+  <i class="fa fa-times" aria-hidden="true"></i>
+</button>
+<h4 mat-dialog-title class="text-primary">{{ 'USER.ADD_USER' | translate }}</h4>
+<mat-divider class="py-2"></mat-divider>
+
+
+<mat-dialog-content>
+  <form [formGroup]="addUserForm" (ngSubmit)="addCustomer()">
+    <div class="row pb-4">
+      <mat-form-field class="col-md-6">
+        <input matInput placeholder="{{ 'USER.FORM.FNAME' | translate }}" formControlName="firstName" required>
+        <mat-error *ngIf="addUserForm.controls.firstName.hasError('required')">{{ 'USER.FORM.REQUIRED' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="col-md-6">
+        <input matInput placeholder="{{ 'USER.FORM.LNAME' | translate }}" formControlName="lastName" required>
+        <mat-error *ngIf="addUserForm.controls.lastName.hasError('required')">{{ 'USER.FORM.REQUIRED' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="col-md-6">
+        <input matInput placeholder="{{ 'USER.FORM.EMAIL' | translate }}" formControlName="email" required>
+        <mat-error *ngIf="addUserForm.controls.email.hasError('required')">{{ 'USER.FORM.REQUIRED' | translate }}
+        </mat-error>
+        <mat-error *ngIf="addUserForm.controls.email.hasError('email')">{{ 'USER.FORM.VALID_EMAIL' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="col-md-6">
+        <input matInput placeholder="{{ 'USER.FORM.PASSWORD' | translate }}" [type]="hide ? 'text' : 'password'"
+          formControlName="password" #password required>
+        <mat-error *ngIf="addUserForm.controls.password.hasError('required')">{{ 'USER.FORM.REQUIRED' | translate }}
+        </mat-error>
+        <mat-icon matSuffix (click)="hide = !hide">{{!hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="col-md-6">
+        <input matInput type="number" placeholder="{{ 'USER.FORM.PHONE' | translate }}" formControlName="phone">
+        <mat-error *ngIf="addUserForm.controls.phone.hasError('required')">{{ 'USER.FORM.REQUIRED' | translate }}
+        </mat-error>
+        <mat-error *ngIf="addUserForm.controls.phone.hasError('minlength')">{{ 'USER.FORM.MIN_6' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="col-md-6">
+        <mat-select placeholder="{{ 'USER.FORM.ROLE' | translate }}" formControlName="role">
+
+          <mat-option *ngFor="let roleObj of roleList" [value]="roleObj">{{roleObj.name}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="addUserForm.controls.role.hasError('required')">{{ 'USER.FORM.REQUIRED' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+    </div>
+
+    <button class="btn btn-primary mr-3">Submit</button>
+    <button class="btn btn-secondary" type="reset" (click)="addUserForm.reset()"> Reset </button>
+  </form>
+
+
+</mat-dialog-content>

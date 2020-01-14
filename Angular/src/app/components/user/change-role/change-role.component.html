@@ -1,0 +1,40 @@
+<button mat-dialog-close mat-icon-button class="float-right">
+  <i class="fa fa-times" aria-hidden="true"></i>
+</button>
+<h4 mat-dialog-title class="text-primary">{{ 'USER.CHANGE_ROLE' | translate }}</h4>
+
+<mat-divider class="py-2"></mat-divider>
+
+
+<mat-dialog-content>
+  <form [formGroup]="changeUserRoleForm" (ngSubmit)="changeUserRole()">
+    <div>
+      <mat-form-field class="w-75">
+        <mat-chip-list #chipList>
+          <mat-chip *ngFor="let user of users;let i=index;" [selectable]="selectable" [removable]="removable"
+            (removed)="remove(user, i)">
+            {{user.firstName}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="{{ 'USER.ASSIGN_ROLE.SELECTED_USER' | translate }}" #userInput formControlName="userName"
+            [matAutocomplete]="auto" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+          <mat-option *ngFor="let user of filterUserList | async" [value]="user">
+            {{user.firstName}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+    <div class="py-3">
+      <mat-form-field>
+        <mat-select placeholder="{{ 'USER.FORM.ROLE' | translate }}" formControlName="role">
+          <mat-option *ngFor="let roleObj of roleList" [value]="roleObj">{{roleObj.name}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="roleCtrl.hasError('required')">{{ 'USER.FORM.REQUIRED' | translate }}</mat-error>
+      </mat-form-field>
+    </div>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</mat-dialog-content>

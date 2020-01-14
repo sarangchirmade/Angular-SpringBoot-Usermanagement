@@ -1,0 +1,85 @@
+Arguments: 
+  /usr/local/bin/node /usr/share/yarn/bin/yarn.js add @fontawesome-free
+
+PATH: 
+  /opt/maven/bin:/opt/maven/bin:/opt/maven/bin:/bin:/opt/gradle/gradle-5.2.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  12.14.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@fontawesome-free: Request "https://registry.yarnpkg.com/@fontawesome-free" returned a 405
+      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66839:18)
+      at Request.self.callback (/usr/share/yarn/lib/cli.js:140464:22)
+      at Request.emit (events.js:223:5)
+      at Request.<anonymous> (/usr/share/yarn/lib/cli.js:141436:10)
+      at Request.emit (events.js:223:5)
+      at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:141358:12)
+      at Object.onceWrapper (events.js:312:28)
+      at IncomingMessage.emit (events.js:228:7)
+      at endReadableNT (_stream_readable.js:1185:12)
+      at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+npm manifest: 
+  {
+    "name": "user",
+    "version": "0.0.0",
+    "scripts": {
+      "ng": "ng",
+      "start": "ng serve",
+      "build": "ng build",
+      "test": "ng test",
+      "lint": "ng lint",
+      "e2e": "ng e2e"
+    },
+    "private": true,
+    "dependencies": {
+      "@angular/animations": "~8.2.14",
+      "@angular/cdk": "~8.2.3",
+      "@angular/common": "~8.2.14",
+      "@angular/compiler": "~8.2.14",
+      "@angular/core": "~8.2.14",
+      "@angular/forms": "~8.2.14",
+      "@angular/material": "^8.2.3",
+      "@angular/platform-browser": "~8.2.14",
+      "@angular/platform-browser-dynamic": "~8.2.14",
+      "@angular/router": "~8.2.14",
+      "hammerjs": "^2.0.8",
+      "rxjs": "~6.4.0",
+      "tslib": "^1.10.0",
+      "zone.js": "~0.9.1"
+    },
+    "devDependencies": {
+      "@angular-devkit/build-angular": "~0.803.22",
+      "@angular/cli": "~8.3.22",
+      "@angular/compiler-cli": "~8.2.14",
+      "@angular/language-service": "~8.2.14",
+      "@types/node": "~8.9.4",
+      "@types/jasmine": "~3.3.8",
+      "@types/jasminewd2": "~2.0.3",
+      "codelyzer": "^5.0.0",
+      "jasmine-core": "~3.4.0",
+      "jasmine-spec-reporter": "~4.2.1",
+      "karma": "~4.1.0",
+      "karma-chrome-launcher": "~2.2.0",
+      "karma-coverage-istanbul-reporter": "~2.0.1",
+      "karma-jasmine": "~2.0.1",
+      "karma-jasmine-html-reporter": "^1.4.0",
+      "protractor": "~5.4.0",
+      "ts-node": "~7.0.0",
+      "tslint": "~5.15.0",
+      "typescript": "~3.5.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

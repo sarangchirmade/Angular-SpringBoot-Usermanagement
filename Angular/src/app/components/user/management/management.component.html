@@ -1,0 +1,14 @@
+<div class="container-fluid pt-3 h-100">
+  <div class="mat-elevation-z3">
+    <mat-toolbar class="bg-primary text-white">
+      <button mat-button (click)="addUser()" ><i class="fa fa-plus px-2"
+          aria-hidden="true"></i>{{ 'USER.ADD_USER' | translate }}</button>
+      <button mat-button (click)="changeUserRole()"><i class="fa fa-undo px-2" aria-hidden="true"></i>{{ 'USER.CHANGE_ROLE' | translate }}</button>
+      <button mat-button><i class="fa fa-trash px-2"
+          aria-hidden="true"></i>{{ 'USER.UNASSIGN_ROLE' | translate }}</button>
+    </mat-toolbar>
+  </div>
+  <div class="py-3"> <span class="h6">{{ 'USER.CURRENT_USER' | translate }}</span></div>
+
+  <app-list></app-list>
+</div>

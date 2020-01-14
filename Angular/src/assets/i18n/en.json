@@ -1,0 +1,31 @@
+{
+    "USER": {
+        "ADD_USER": "ADD USER",
+        "CHANGE_ROLE": "CHANGE ROLE",
+        "UNASSIGN_ROLE": "UNASSIGN ROLE",
+        "CURRENT_USER": "Current Users",
+        "COLUMN": {
+            "FNAME": "FIRST NAME",
+            "LNAME": "LAST NAME",
+            "EMAIL": "EMAIL",
+            "ROLE": "ROLE",
+            "EDIT": "Edit",
+            "DELETE": "Delete"
+        },
+        "FORM": {
+            "FNAME": "FIRST NAME",
+            "LNAME": "LAST NAME",
+            "EMAIL": "EMAIL",
+            "PASSWORD": "PASSWORD",
+            "PHONE": "PHONE NUMBER",
+            "ROLE": "SELECT ROLE",
+            "VALID_EMAIL": "Enter valid email",
+            "REQUIRED": "You must enter a value",
+            "MIN_6": "Minimun 6 character required"
+        },
+        "ASSIGN_ROLE": {
+            "SELECTED_USER": "SELECTED USERS"
+        }
+    }
+
+}
